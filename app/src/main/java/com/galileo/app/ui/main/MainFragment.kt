@@ -9,6 +9,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.galileo.app.databinding.MainFragmentBinding
+import com.galileo.app.ext.visibleOrGone
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -37,6 +38,7 @@ class MainFragment : Fragment() {
                 // This happens when lifecycle is STARTED and stops
                 // collecting when the lifecycle is STOPPED
                 viewModel.content.collect {
+                    binding.message.visibleOrGone(!it.isNullOrEmpty())
                     binding.message.text = it
                 }
             }
