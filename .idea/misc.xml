@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/chat_bubble.xml" value="0.3707692307692308" />
+        <entry key="app/src/main/res/drawable/ic_close.xml" value="0.3707692307692308" />
+        <entry key="app/src/main/res/drawable/icon_bg.xml" value="0.3707692307692308" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.16770833333333332" />
       </map>

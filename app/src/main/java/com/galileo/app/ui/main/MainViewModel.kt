@@ -11,6 +11,10 @@ class MainViewModel(val cowboyWisdomRepo: CowboyWisdomRepo) : ViewModel() {
     private val _content = MutableStateFlow("")
     val content: StateFlow<String?> get() = _content
 
+    fun onCloseClicked() {
+        _content.value = ""
+    }
+
     fun onButtonClicked() {
         viewModelScope.launch {
             _content.value = cowboyWisdomRepo.fetchWisdom()

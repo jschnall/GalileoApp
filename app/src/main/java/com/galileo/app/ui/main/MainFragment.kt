@@ -28,7 +28,7 @@ class MainFragment : Fragment() {
         _binding = MainFragmentBinding.inflate(inflater, container, false)
 
         binding.button.setOnClickListener { viewModel.onButtonClicked() }
-
+        binding.close.setOnClickListener { viewModel.onCloseClicked() }
         // Create a new coroutine in the lifecycleScope
         viewLifecycleOwner.lifecycleScope.launch {
             // repeatOnLifecycle launches the block in a new coroutine every time the
@@ -38,7 +38,7 @@ class MainFragment : Fragment() {
                 // This happens when lifecycle is STARTED and stops
                 // collecting when the lifecycle is STOPPED
                 viewModel.content.collect {
-                    binding.message.visibleOrGone(!it.isNullOrEmpty())
+                    binding.messageLayout.visibleOrGone(!it.isNullOrEmpty())
                     binding.message.text = it
                 }
             }
